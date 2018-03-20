@@ -1,0 +1,34 @@
+for CD-HIT
+
+./cd-hit -i Filtered9lin.fasta -o clusters -c 0.95 -n 5
+./cd-hit-est -i Filtered9lin.fasta -o clusters -c 0.95 -n 5
+----------------------------------------------------------------------------------
+
+for Uclust:
+
+./usearch -id 0.95 -cluster_fast result.fasta -uc results.uc
+
+uclust for sorting: ./uclust --sort Filtered9lin.fasta --output seqs_sorted.fasta
+uclust for clustering: ./uclust --input seqs_sorted.fasta --uc results.uc --id 0.90
+
+--------------------------------------------------------------------------------------
+
+for linclust:
+
+create db
+./mmseqs createdb Filtered9lin.fasta DB1
+
+
+
+cluster
+./mmseqs linclust DB1 outDB1 tmp --min-seq-id 0.90
+
+to calculate runtime
+time ./mmseqs linclust DB1 outDB1 tmp --min-seq-id 0.90
+
+
+-----
+csv file with first column as centroid and second column as member sequences
+mmseqs createtsv DB DB clu clu.tsv
+
+
