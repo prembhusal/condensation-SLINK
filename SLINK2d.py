@@ -4,7 +4,7 @@ import numpy as np
 from scipy.cluster.hierarchy import dendrogram, linkage,fcluster
 from matplotlib import pyplot as plt
 
-infile = open(sys.argv[1])
+infile = open(sys.argv[1]) # input vector file with comma seperated values
 k = int(sys.argv[2])
 X = []
 for line in infile:
