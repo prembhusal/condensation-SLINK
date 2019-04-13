@@ -21,6 +21,8 @@ def getLabelsWithCentroids():
 	#labels.sort()
 	return labels
 
+
+
 def getLabelsWithCentroidsMod():
 	#parse the cdHit output file and gives tuple containing (centroid, seqid) 
 	f = open('clusters.clstr','r')
