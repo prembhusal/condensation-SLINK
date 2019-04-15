@@ -140,8 +140,8 @@ def redistributeLabelsKmax(kMax):
 # print 'NMI score2 : ', normalized_mutual_info_score(tlabel, clabel) 
 	
 
-#print redistributeLabels(10)
-#print getLabelsWithCentroidsMod()
+print redistributeLabels(10)
+print getLabelsWithCentroidsMod()
 
 
 
